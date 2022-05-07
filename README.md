@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # DRAG AND DROP & REACT-BEATIFUL-DND
 
 ## Technologies
@@ -43,7 +42,3 @@ $ yarn install
 # Run the app
 $ yarn dev
 ```
-=======
-# drag-and-drop-example-v1
-Drag and Drop - react-beautiful-dnd
->>>>>>> 71f3db24e786eff13fc01eb872c68594598f6a95
