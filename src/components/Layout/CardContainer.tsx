@@ -3,6 +3,7 @@ import type { ReactElement } from 'react';
 
 import { CardPlayer } from '@/components';
 import type { ICardContainerProps } from '@/models';
+import { BorderDrag } from '../Commons';
 
 function CardContainer({ columnId, column, direction }: ICardContainerProps): ReactElement {
   return (
@@ -19,7 +20,7 @@ function CardContainer({ columnId, column, direction }: ICardContainerProps): Re
           <h3 className="text-lg text-center font-semibold uppercase">Total: {column.items.length}</h3>
         </div>
       </div>
-      <Droppable droppableId={columnId} key={columnId} direction={direction} type={'column'}>
+      <Droppable droppableId={columnId} key={columnId} direction={direction}>
         {(droppableProvided, snapshot) => (
           <div
             {...droppableProvided.droppableProps}
@@ -32,17 +33,13 @@ function CardContainer({ columnId, column, direction }: ICardContainerProps): Re
               <div key={item.id || ''} className="w-48 mx-auto flex justify-center items-center relative">
                 <CardPlayer index={index} {...item} />
 
-                <div className="w-44 h-60 m-2 flex justify-center items-center absolute inset-0 z-10 border-dashed border-2 border-sky-500 rounded-lg">
-                  <span className="text-xl text-sky-500 font-semibold uppercase">Drop</span>
-                </div>
+                <BorderDrag />
               </div>
             ))}
 
             {!column.items.length && (
               <div className="w-48 h-60 mb-5 mx-auto flex justify-center items-center relative">
-                <div className="w-44 h-60 m-2 flex justify-center items-center absolute inset-0 z-10 border-dashed border-2 border-sky-500 rounded-lg">
-                  <span className="text-xl text-sky-500 font-semibold uppercase">Drop</span>
-                </div>
+                <BorderDrag />
               </div>
             )}
 
