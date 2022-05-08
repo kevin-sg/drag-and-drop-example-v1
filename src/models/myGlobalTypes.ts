@@ -1,9 +1,11 @@
+import type { DropResult } from 'react-beautiful-dnd';
+
 // *******************************************************
 //                This types items Selection
 // *******************************************************
 
 export interface ISelection {
-  id: string;
+  id: number;
   name: string;
   firstname: string;
   lastname: string;
@@ -26,13 +28,14 @@ enum Birth {
 //                This types props cart container
 // *******************************************************
 
-export interface ICardPlayerProps extends ItemsFromBackendData {
+export interface ICardPlayerProps extends ISelection {
   index: number;
 }
 
 export interface ICardContainerProps {
   columnId: string;
   column: IValuesBackendData;
+  direction?: 'horizontal' | 'vertical';
 }
 
 // *******************************************************
@@ -40,10 +43,6 @@ export interface ICardContainerProps {
 // *******************************************************
 
 export interface IListSelection {
-  team: ISelection[];
-}
-
-export interface IListSelectionState {
   team: ISelection[];
 }
 
@@ -58,9 +57,21 @@ export interface ItemsFromBackendData {
 
 export interface IValuesBackendData {
   name: string;
-  items: ItemsFromBackendData[] | [];
+  items: ISelection[] | [];
 }
 
 export interface IColumnsFromBackendData {
   [x: string]: IValuesBackendData;
+}
+
+// *******************************************************
+//                This type useDragEnd Custom hook
+// *******************************************************
+
+export interface IDragEndArg {
+  (result: DropResult, columns: IColumnsFromBackendData, setColumns: Function): void;
+}
+
+export interface IDragEndCustomHook {
+  onDragEnd: IDragEndArg;
 }
