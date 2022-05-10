@@ -1,11 +1,11 @@
-import { ReactElement } from "react";
-import { HomePage } from "./pages";
+import { StateProvider } from './context';
+import { HomePage } from './pages';
 
-function App(): ReactElement {
+function App(): React.ReactElement {
   return (
-    <div>
+    <StateProvider>
       <HomePage />
-    </div>
+    </StateProvider>
   );
 }
 
