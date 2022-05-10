@@ -28,6 +28,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 Doc: [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
 
+## Guide React Dropzone
+
+Doc: [react-dropzone](https://github.com/react-dropzone/react-dropzone)
+
 ## How To Use
 
 To clone and run this application, you'll need Git and Node.js (which comes with yarn) installed on your computer. From your command line:
