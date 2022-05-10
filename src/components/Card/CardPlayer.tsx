@@ -1,5 +1,5 @@
-import type { ReactElement } from 'react';
 import { Draggable } from 'react-beautiful-dnd';
+import type { ReactElement } from 'react';
 
 import type { ICardPlayerProps } from '@/models';
 
@@ -11,7 +11,7 @@ function CardPlayer({ index, ...props }: ICardPlayerProps): ReactElement {
           ref={draggableProvided.innerRef}
           {...draggableProvided.draggableProps}
           {...draggableProvided.dragHandleProps}
-          className={'my-2 flex justify-center items-center'}
+          className="my-2 flex justify-center items-center"
         >
           <div
             className={`${
