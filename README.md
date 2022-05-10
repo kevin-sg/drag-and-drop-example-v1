@@ -1,4 +1,4 @@
-# DRAG AND DROP & REACT-BEATIFUL-DND
+# DRAG AND DROP & DROPZONE
 
 ## Technologies
 
@@ -27,6 +27,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 ## Guide Drag and Drop
 
 Doc: [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
+
+## Guide React Dropzone
+
+Doc: [react-dropzone](https://react-dropzone.js.org/)
 
 ## How To Use
 
