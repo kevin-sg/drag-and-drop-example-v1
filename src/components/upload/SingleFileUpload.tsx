@@ -1,14 +1,10 @@
+import { ReactElement, useEffect, useState } from 'react';
+
 import { uploadFile } from '@/utilities';
-import { useEffect, useState } from 'react';
-import { ProgressBar, FileHeader } from '../Commons';
+import type { ISingleFileUploadProps } from '@/models';
+import { ProgressBar, FileHeader } from '@/components';
 
-interface ISingleFileUploadProps {
-  file: File;
-  onUpload: (file: File, url: string) => void;
-  onDelete: (file: File) => void;
-}
-
-function SingleFileUpload({ file, onUpload, onDelete }: ISingleFileUploadProps) {
+function SingleFileUpload({ file, onUpload, onDelete }: ISingleFileUploadProps): ReactElement {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

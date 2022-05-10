@@ -1,7 +1,4 @@
-interface IProgressBarProps {
-  porcentage: number;
-  status?: 'success' | 'error';
-}
+import type { IProgressBarProps } from '@/models';
 
 function ProgressBar({ porcentage, status = 'success' }: IProgressBarProps): React.ReactElement {
   const typeStatus = status === 'success' ? 'bg-blue-600' : 'bg-red-600';

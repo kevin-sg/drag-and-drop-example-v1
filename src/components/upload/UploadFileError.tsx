@@ -1,14 +1,7 @@
-import { FileError } from 'react-dropzone';
 import * as Io from 'react-icons/io';
 
+import type { IUploadErrorProps } from '@/models';
 import { FileHeader, ProgressBar } from '@/components';
-
-interface IUploadErrorProps {
-  file: File;
-  progress?: number;
-  errors: FileError[];
-  onDelete: (file: File) => void;
-}
 
 function UploadFileError({ file, progress = 100, errors, onDelete }: IUploadErrorProps): React.ReactElement {
   return (

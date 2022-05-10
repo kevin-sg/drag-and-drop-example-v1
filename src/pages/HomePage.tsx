@@ -1,4 +1,4 @@
-import { DropzoneContainer, FormContainer } from '@/components';
+import { FormContainer } from '@/components';
 
 function HomePage(): React.ReactElement {
   return (

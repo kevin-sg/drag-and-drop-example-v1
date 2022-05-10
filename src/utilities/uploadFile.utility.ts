@@ -1,7 +1,11 @@
+/**
+ *
+ * @param file this is File content
+ * @param onProgress this is function set an porcentage of number
+ * @returns promisse of type string
+ */
 export function uploadFile(file: File, onProgress: (porcentage: number) => void) {
-  // const url = 'https://api.cloudinary.com/v1_1/doyv2rmqe/upload';
   const url = 'https://api.cloudinary.com/v1_1/demo/image/upload';
-  const key = 'react-upload';
 
   return new Promise<string>((res, rej) => {
     const xhr = new XMLHttpRequest();
@@ -22,8 +26,6 @@ export function uploadFile(file: File, onProgress: (porcentage: number) => void)
     const formData = new FormData();
     formData.append('file', file);
     formData.append('upload_preset', 'docs_upload_example_us_preset');
-    // formData.append('upload_preset', key);
-    // formData.append('folder', 'dropzone_v1');
 
     xhr.send(formData);
   });

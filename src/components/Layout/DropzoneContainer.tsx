@@ -1,17 +1,8 @@
+import { FileRejection, useDropzone } from 'react-dropzone';
 import { useCallback, useEffect, useState } from 'react';
-import { FileError, FileRejection, useDropzone } from 'react-dropzone';
 
+import type { IDropzoneContainerProps, IUploadFile } from '@/models';
 import { DropzoneInput, SingleFileUpload, UploadFileError, Button } from '@/components';
-
-interface IUploadFile {
-  file: File;
-  errors: FileError[];
-  url?: string;
-}
-
-interface IDropzoneContainerProps {
-  handleChange: Function;
-}
 
 function DropzoneContainer({ handleChange }: IDropzoneContainerProps): React.ReactElement {
   const maxSize = 5242880;
@@ -20,7 +11,6 @@ function DropzoneContainer({ handleChange }: IDropzoneContainerProps): React.Rea
 
   const onDrop = useCallback((accFiles: File[], rejFiles: FileRejection[]) => {
     const mappedAcc = accFiles.map((file) => ({ file, errors: [] }));
-    // console.log(mappedAcc);
     setFiles((prev) => [...prev, ...mappedAcc, ...rejFiles]);
   }, []);
 
@@ -81,7 +71,7 @@ function DropzoneContainer({ handleChange }: IDropzoneContainerProps): React.Rea
       {files?.length ? (
         <div className="w-72 mx-auto flex justify-around items-center">
           <Button type="submit" text="Submit" action="success" />
-          {/* <Button type="button" text="Reset" action="reset" onClick={handleReset} /> */}
+          <Button type="button" text="Reset" action="reset" onClick={handleReset} />
         </div>
       ) : (
         <></>

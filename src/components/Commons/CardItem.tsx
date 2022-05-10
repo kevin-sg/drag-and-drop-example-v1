@@ -1,10 +1,4 @@
-import { FileError } from 'react-dropzone';
-
-interface IUploadFile {
-  file: File;
-  url?: string;
-  errors: FileError[];
-}
+import type { IUploadFile } from '@/models';
 
 function CardItem({ file, url }: IUploadFile): React.ReactElement {
   const fileName = file.name.split('.').slice(0, 1)[0];

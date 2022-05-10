@@ -1,11 +1,6 @@
-import { RiCloseFill } from 'react-icons/ri';
+import * as Ai from 'react-icons/ri';
 
-interface IFileHeaderProps {
-  filename: string;
-  porcentage: number;
-  status?: 'success' | 'error';
-  onDelete?: () => void;
-}
+import type { IFileHeaderProps } from '@/models';
 
 function FileHeader({ filename, porcentage, status = 'success', onDelete }: IFileHeaderProps) {
   return (
@@ -19,7 +14,7 @@ function FileHeader({ filename, porcentage, status = 'success', onDelete }: IFil
 
         <button type="button" onClick={onDelete}>
           {''}
-          <RiCloseFill className="text-xl text-red-500" />
+          <Ai.RiCloseFill className="text-xl text-red-500" />
         </button>
       </div>
     </div>

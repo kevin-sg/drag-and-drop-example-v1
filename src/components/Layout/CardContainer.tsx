@@ -1,10 +1,9 @@
 import { Droppable } from 'react-beautiful-dnd';
-import type { ReactElement } from 'react';
 
 import { CardPlayer } from '@/components';
 import type { ICardContainerProps } from '@/models';
 
-function CardContainer({ id, team }: ICardContainerProps): ReactElement {
+function CardContainer({ id, team }: ICardContainerProps): React.ReactElement {
   return (
     <div className="w-72 mx-auto pb-5 bg-gray-800 my-10 rounded-md shadow-lg shadow-gray-800">
       <div className="bg-gray-900 w-full py-2">

@@ -1,28 +1,15 @@
-import { ReactElement, createContext, useState } from 'react';
-import { FileError } from 'react-dropzone';
+import { createContext, useState } from 'react';
 
-interface IStateContextProps {
-  stateData: InitialGlobalState;
-  onReset: Function;
-  setSateData: Function;
-}
+import type * as models from '@/models';
 
-interface InitialGlobalState {
-  formData: [];
-}
-
-const initialState: InitialGlobalState = {
+const initialState: models.InitialGlobalState = {
   formData: [],
 };
 
-interface IStateProviderProps {
-  children: ReactElement | ReactElement[];
-}
+export const StateContext = createContext({} as models.IStateContextProps);
 
-export const StateContext = createContext({} as IStateContextProps);
-
-export function StateProvider({ children }: IStateProviderProps) {
-  const [stateData, setSateData] = useState(initialState as InitialGlobalState);
+export function StateProvider({ children }: models.IStateProviderProps) {
+  const [stateData, setSateData] = useState(initialState as models.InitialGlobalState);
 
   function onReset(): void {
     setSateData((prev) => ({ ...prev, formData: [] }));

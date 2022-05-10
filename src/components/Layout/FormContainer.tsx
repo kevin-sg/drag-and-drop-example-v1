@@ -1,19 +1,13 @@
-import { StateContext } from '@/context';
-import { useForm } from '@/hooks';
 import { useContext } from 'react';
-import { Button, CardItem } from '../Commons';
-import DropzoneContainer from './DropzoneContainer';
 
-interface IFormContainerProps {
-  // children: JSX.Element | JSX.Element[];
-}
+import { useForm } from '@/hooks';
+import { StateContext } from '@/context';
+import { Button, CardItem, DropzoneContainer } from '@/components';
 
-function FormContainer(props: IFormContainerProps): React.ReactElement {
+function FormContainer(): React.ReactElement {
   const { stateData, onReset } = useContext(StateContext);
 
   const { handleChange, handleSubmit } = useForm();
-
-  console.log(stateData);
 
   return (
     <div className="w-full mx-auto">

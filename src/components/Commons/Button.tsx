@@ -1,10 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
-
-interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
-  type: 'submit' | 'button';
-  action: 'success' | 'reset';
-}
+import type { IButtonProps } from '@/models';
 
 function Button({ type = 'button', action = 'success', text, ...props }: IButtonProps): React.ReactElement {
   const customClass =

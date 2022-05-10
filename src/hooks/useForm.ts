@@ -1,21 +1,12 @@
-import { StateContext } from '@/context';
 import { FormEvent, useContext, useState } from 'react';
-import { FileError } from 'react-dropzone';
 
-interface IUploadFile {
-  file: File;
-  url?: string;
-  errors: FileError[];
-}
-
-interface InitialState {
-  formData: IUploadFile[] | [];
-}
+import { StateContext } from '@/context';
+import type { InitialFormState, IUploadFile } from '@/models';
 
 function useForm() {
   const { setSateData } = useContext(StateContext);
 
-  const [formData, setFormData] = useState({} as InitialState);
+  const [formData, setFormData] = useState({} as InitialFormState);
 
   function handleChange(upload: IUploadFile[]) {
     setFormData((prev) => ({ ...prev, formData: upload }));
